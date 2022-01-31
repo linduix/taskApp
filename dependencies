@@ -1,0 +1,8 @@
+### ARCH ###
+iwconfig
+python3
+python-pip
+bash
+
+### PYTHON ###
+sockets

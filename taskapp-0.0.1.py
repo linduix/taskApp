@@ -6,7 +6,6 @@ import json
 HomeDir = os.environ["HOME"]
 dataLoc = HomeDir + "/NextCloud/Todo"
 
-
 # load todos
 def readTodo():
     with open(f"{dataLoc}/todo.json", 'r') as f:
@@ -21,6 +20,13 @@ def readTodo():
 def printList():
     pass
 
+# add command
+def add(task, difficulty, length, dueDate, category):
+    pass
+
+
+# commands
+commands = {'a':add}
 
 run = True
 #  main loop
@@ -28,4 +34,6 @@ while run is True:
     os.system('\clear')
     todoData = readTodo()
     printList()
+
+    command = input("Command~> ")
 

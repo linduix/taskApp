@@ -4,10 +4,28 @@ import sys
 import json
 
 HomeDir = os.environ["HOME"]
-with open(f"{HomeDir}/.local/share/todoapp/todo.json", 'r') as f:
-    try:
-        todoJson = json.load(f)
-    except: 
-        todoJson = None
+dataLoc = HomeDir + "/NextCloud/Todo"
 
-print(todoJson)
+
+# load todos
+def readTodo():
+    with open(f"{dataLoc}/todo.json", 'r') as f:
+        try:
+            data = json.load(f)
+        except:
+            data = None
+    return data
+
+
+# print list
+def printList():
+    pass
+
+
+run = True
+#  main loop
+while run is True:
+    os.system('\clear')
+    todoData = readTodo()
+    printList()
+

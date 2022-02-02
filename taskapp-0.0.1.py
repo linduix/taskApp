@@ -21,12 +21,13 @@ def printList():
     pass
 
 # add command
-def add(task, difficulty, length, dueDate, category):
-    pass
+def add():
+    task = input('Title: ')
+
 
 
 # commands
-commands = {'a':add}
+commands = {'a': add}
 
 run = True
 #  main loop
@@ -36,4 +37,4 @@ while run is True:
     printList()
 
     command = input("Command~> ")
-
+    commands[command]

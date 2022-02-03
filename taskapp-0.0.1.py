@@ -4,7 +4,10 @@ import sys
 import json
 
 HomeDir = os.environ["HOME"]
-dataLoc = HomeDir + "/NextCloud/Todo"
+dataLoc = HomeDir + ".local/NextCloud/Todo"
+
+# newline
+y = 5
 
 # load todos
 def readTodo():

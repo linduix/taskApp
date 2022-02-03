@@ -4,7 +4,7 @@ import sys
 import json
 
 HomeDir = os.environ["HOME"]
-dataLoc = HomeDir + "NextCloud/Todo"
+dataLoc = HomeDir + "/NextCloud/Todo"
 
 
 # load todos

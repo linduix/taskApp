@@ -1,2 +1,2 @@
 # Todo app
-Todo.txt manager in development
+CLI Todo.txt manager in development

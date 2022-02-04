@@ -1,4 +1,5 @@
 .virtualenv
 .venv
 .idea
+test*.py
 server

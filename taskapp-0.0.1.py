@@ -4,6 +4,7 @@ import sys
 import json
 import datetime
 import re
+import inquirer
 
 HomeDir = os.environ["HOME"]
 dataLoc = HomeDir + "/NextCloud/Todo"
@@ -31,16 +32,25 @@ def dateparse(inp):
         6: ('sunday', 'sun')
     }
 
+    verbose= {
+
+    }
+
 
 
     inp = inp.strip()
     if re.match("\\d{1,2}/\\d{1,2}/\\d{1,2}", inp):
-        due = inp.split('/')
-        due[2] = f"20{due[2]}"
+        listdue = inp.split('/')
+        listdue[2] = f"20{listdue[2]}"
         for i in range(3):
-            due[i] = int(due[i])
+            listdue[i] = int(listdue[i])
+        due = {
+            'day': listdue[1],
+            'month': listdue[2],
+            'year': listdue[3]
+        }
 
-        due = datetime.date(due[2], due[1], due[0])
+        due = datetime.date(due['day'], due['month'], due['year'])
         return False, due
     else:
         return True, 'Date not Recognised'
@@ -50,7 +60,6 @@ def dateparse(inp):
 # print list
 def printList():
     pass
-
 
 # COMMANDS ----------------------------
 
@@ -64,7 +73,8 @@ def help(args=[]):
 
 # add command
 def add(args=None):
-    task = input('Title: ')
+    task = inquirer.text('Title')
+
 
     due = input('Due: ')
     error, response = dateparse(due)
